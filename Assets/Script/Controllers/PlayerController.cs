@@ -42,7 +42,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Move();
+        if(player.status == Status.Normal)
+        {
+			Move();
+		}
     }
 
 	private void OnTriggerEnter2D(Collider2D collision)
@@ -50,8 +53,8 @@ public class PlayerController : MonoBehaviour
 		if (collision.CompareTag("Item"))
 		{
             var collect = collision.GetComponent<CollectableItem>();
-            player.inventory.AddItem(collect.item);
-            Destroy(collision.gameObject);
+            var itemAdded = player.inventory.AddItem(collect);
+            if(itemAdded) Destroy(collision.gameObject);
 		}
 	}
 }

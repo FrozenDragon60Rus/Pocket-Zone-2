@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  damage: 2
+  damage: 10
   defence: 0
   maxHealth: 100
   health: 100
