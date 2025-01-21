@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 8470768929017820087}
   - component: {fileID: 6837703651897903351}
   - component: {fileID: 7382998776421474679}
-  - component: {fileID: 2515716041956806982}
+  - component: {fileID: 3598653055206421817}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2515716041956806982
+--- !u!114 &3598653055206421817
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f842e82c6adb7543a526cac44a05bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 8067691951509981115}
+  menu: {fileID: 0}
 --- !u!1 &5196781686697727789
 GameObject:
   m_ObjectHideFlags: 0
