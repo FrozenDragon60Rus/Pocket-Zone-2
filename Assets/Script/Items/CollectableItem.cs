@@ -1,8 +1,10 @@
 using Assets.Script.Items;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Script {
+	[Serializable]
 	public class CollectableItem : MonoBehaviour
 	{
 		public Item item;
