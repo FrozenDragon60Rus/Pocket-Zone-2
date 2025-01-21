@@ -1,14 +1,30 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Threading;
+using Unity.VisualScripting;
+using UnityEngine;
 
 namespace Assets.Script.Items
 {
-	internal abstract class Item
+	[Serializable]
+	public class Item
 	{
-		[SerializeField]
-		private string Name { get; }
-		[SerializeField]
-		public int Stuck { get; } = 1;
-		[SerializeField]
-		public string Icon { get; set; }
+		public string name;
+		public int count = 1;
+		public int stuck = 1;
+		public Sprite icon;
+		public ItemType type = ItemType.Empty;
+
+		public static Item Empty =>
+			new()
+			{
+				name = string.Empty,
+				count = 1,
+				stuck = 1,
+				icon = null,
+				type = ItemType.Empty
+			};
+
+		public bool IsEmpty =>
+			type == ItemType.Empty;
 	}
 }
