@@ -2,9 +2,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Assets.Script.Items;
+using System;
 
 namespace Assets.Script
 {
+	[Serializable]
 	public class Inventory : MonoBehaviour
 	{
 		public GameObject canvas; // Панель инвентаря
@@ -40,6 +42,10 @@ namespace Assets.Script
 			items.Remove(item);
 			UpdateInventoryUI();	
 		}
+		public Item GetItem(int index) =>
+			items[index];
+		public int ItemCount =>
+			items.Count;
 		public void SetEquipment(CollectableItem collectable)
 		{
 			EquipmentSlot slot = collectable.Slot;

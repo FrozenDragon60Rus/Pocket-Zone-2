@@ -1,7 +1,10 @@
 ﻿using Assets.Script.Stats;
+using System;
+using UnityEngine;
 
 namespace Assets.Script.Character
 {
+	[Serializable]
 	public class Player : Unit
 	{
 		public Inventory inventory;
