@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4460522453533080055}
   - component: {fileID: 4460522453533080053}
   - component: {fileID: 6167413920080837026}
-  - component: {fileID: 1164679932548682520}
   - component: {fileID: 1776757051421948824}
   - component: {fileID: 8291450381471128433}
   - component: {fileID: -1000312240588906944}
@@ -116,24 +115,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.51, y: 0.3}
   m_EdgeRadius: 0
---- !u!114 &1164679932548682520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4460522453533080054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9da49922b660504dbe9f7a4b8b387a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 1
-  damage: 8
-  defence: 0
-  maxHealth: 100
-  health: 100
-  speed: 1
 --- !u!114 &1776757051421948824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +127,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad48f9ceacd9fe245981293316a2ea73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 1164679932548682520}
+  stats:
+    level: 1
+    damage: 8
+    defence: 0
+    maxHealth: 100
+    health: 100
+    speed: 1
   status: 0
   hpBar: {fileID: 7298700591123673058}
   items:
