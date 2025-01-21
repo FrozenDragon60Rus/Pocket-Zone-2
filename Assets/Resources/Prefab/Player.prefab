@@ -461,7 +461,6 @@ GameObject:
   - component: {fileID: 1776840003948609961}
   - component: {fileID: 1776840003948609962}
   - component: {fileID: 1776840003948609960}
-  - component: {fileID: 1776840003948609959}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -503,7 +502,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07bae557d397b6c4b80be86d6712ebba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 1776840003948609959}
+  stats:
+    level: 1
+    damage: 2
+    defence: 0
+    maxHealth: 100
+    health: 100
+    speed: 1
   status: 0
   hpBar: {fileID: 1804332564585825659}
   inventory: {fileID: 0}
@@ -571,24 +576,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.30664456, y: 0.29123688}
   m_EdgeRadius: 0
---- !u!114 &1776840003948609959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776840003948609966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9da49922b660504dbe9f7a4b8b387a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 1
-  damage: 2
-  defence: 0
-  maxHealth: 100
-  health: 100
-  speed: 1
 --- !u!1 &1776840003993323316
 GameObject:
   m_ObjectHideFlags: 0
