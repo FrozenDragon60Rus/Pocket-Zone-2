@@ -11,11 +11,13 @@ namespace Assets.Script.Controllers
 		public float maxDistance;
 		public Transform spawn;
 
+		private bool haveTarget = true;
 		private bool FlagAtack = false;
 
 		void Update()
 		{
-			if(unit.status == Status.Normal)
+			if(unit.status == Status.Normal && 
+				haveTarget == false)
 			{
 				MoveToTarget();
 			}
@@ -28,6 +30,9 @@ namespace Assets.Script.Controllers
 
 			var player = target.GetComponent<Player>();
 			player.Damage(unit.stats.damage);
+
+			if (player.status == Status.Dead)
+				haveTarget = false;
 
 			FlagAtack = true;
 
