@@ -3,9 +3,10 @@ using UnityEngine;
 
 namespace Assets.Script.Character
 {
+	[System.Serializable]
 	public abstract class Unit : MonoBehaviour
 	{
-		public CharacterStats stats;
+		public CharacterStats stats = new();
 		public Status status = Status.Normal;
 		public GameObject hpBar;
 		RectTransform hpBarRect;

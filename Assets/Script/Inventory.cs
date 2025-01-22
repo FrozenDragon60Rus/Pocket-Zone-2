@@ -2,9 +2,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Assets.Script.Items;
+using System;
 
 namespace Assets.Script
 {
+	[Serializable]
 	public class Inventory : MonoBehaviour
 	{
 		public GameObject canvas; // Панель инвентаря
@@ -18,28 +20,50 @@ namespace Assets.Script
 		void Start()
 		{
 			canvas.SetActive(false); // Скрыть инвентарь при старте
-			UpdateInventoryUI();
 		}
 
 		public void OnClick()
 		{
+			if(!canvas.activeSelf)
+				UpdateInventoryUI();
 			canvas.SetActive(!canvas.activeSelf);
 		}
 
 		// Добавление предмета в инвентарь
-		public void AddItem(Item item)
+		public bool AddItem(CollectableItem collectable)
 		{
 			if(items.Count < slotCount)
 			{
+				items.Add(collectable.item);
+				UpdateInventoryUI();
+				return true;
+			}
+			return false;
+		}
+		public bool AddItem(Item item)
+		{
+			if (items.Count < slotCount)
+			{
 				items.Add(item);
 				UpdateInventoryUI();
+				return true;
 			}
+			return false;
+		}
+		public void RemoveItem(CollectableItem collectable)
+		{
+			items.Remove(collectable.item);
+			UpdateInventoryUI();	
 		}
 		public void RemoveItem(Item item)
 		{
 			items.Remove(item);
-			UpdateInventoryUI();	
+			UpdateInventoryUI();
 		}
+		public Item GetItem(int index) =>
+			items[index];
+		public int ItemCount =>
+			items.Count;
 		public void SetEquipment(CollectableItem collectable)
 		{
 			EquipmentSlot slot = collectable.Slot;
@@ -50,14 +74,13 @@ namespace Assets.Script
 			EquipmentSlot slot = collectable.Slot;
 			equipment[slot] = null;
 		}
-
 		// Обновление UI инвентаря
 		void UpdateInventoryUI()
 		{
 			foreach (Transform slot in inventoryPanel.transform)
 			{
 				slot.GetChild(0).GetComponent<Image>().sprite = null;
-				slot.GetChild(0).GetComponent<CollectableItem>().item = Item.Empty;
+				slot.GetChild(0).GetComponent<CollectableItem>().SetItem(Item.Empty);
 			}
 
 			int i = 0;
@@ -65,7 +88,7 @@ namespace Assets.Script
 			{
 				Transform slot = inventoryPanel.transform.GetChild(i++);
 				slot.GetChild(0).GetComponent<Image>().sprite = item.icon;
-				slot.GetChild(0).GetComponent<CollectableItem>().item = item;
+				slot.GetChild(0).GetComponent<CollectableItem>().SetItem(item);
 			}
 		}
 	}

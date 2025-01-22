@@ -1,7 +1,7 @@
 ﻿namespace Assets.Script.Stats
 {
 	[System.Serializable]
-	public class CharacterStats : Stats
+	public class CharacterStats
 	{
 		public int level = 1;
 		public int damage = 2;
