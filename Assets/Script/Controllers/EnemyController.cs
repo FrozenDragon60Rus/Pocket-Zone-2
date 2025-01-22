@@ -17,7 +17,7 @@ namespace Assets.Script.Controllers
 		void Update()
 		{
 			if(unit.status == Status.Normal && 
-				haveTarget == false)
+				haveTarget == true)
 			{
 				MoveToTarget();
 			}

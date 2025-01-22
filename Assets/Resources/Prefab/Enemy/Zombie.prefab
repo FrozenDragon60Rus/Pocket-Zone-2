@@ -255,7 +255,7 @@ MonoBehaviour:
     defence: 0
     maxHealth: 100
     health: 100
-    speed: 1
+    speed: 0.5
   status: 0
   hpBar: {fileID: 2302303159810643860}
   items:
