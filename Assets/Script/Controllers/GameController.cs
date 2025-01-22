@@ -24,10 +24,10 @@ namespace Assets.Script.Controllers
 				player.transform.rotation = data.player.rotation;
 				player.stats = data.player.stats;
 
-				/*foreach (var item in data.inventory.item) 
+				foreach (var item in data.inventory.item) 
 				{
 					inventory.AddItem(item);
-				}*/
+				}
 
 				EquipmentData equipment = data.equipment;
 				for(int i = 0; i < data.equipment.slots.Count; i++)
