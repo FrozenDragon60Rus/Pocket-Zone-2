@@ -40,10 +40,25 @@ namespace Assets.Script
 			}
 			return false;
 		}
+		public bool AddItem(Item item)
+		{
+			if (items.Count < slotCount)
+			{
+				items.Add(item);
+				UpdateInventoryUI();
+				return true;
+			}
+			return false;
+		}
 		public void RemoveItem(CollectableItem collectable)
 		{
 			items.Remove(collectable.item);
 			UpdateInventoryUI();	
+		}
+		public void RemoveItem(Item item)
+		{
+			items.Remove(item);
+			UpdateInventoryUI();
 		}
 		public Item GetItem(int index) =>
 			items[index];
