@@ -1,6 +1,5 @@
 using Assets.Script;
 using Assets.Script.Character;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
