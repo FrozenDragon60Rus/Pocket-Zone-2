@@ -8,7 +8,7 @@ namespace Assets.Script.Items
 	{
 		public string name;
 		public int count = 1;
-		public int stuck = 1;
+		public int stack = 1;
 		public Sprite icon;
 		public ItemType type = ItemType.Empty;
 
@@ -17,7 +17,7 @@ namespace Assets.Script.Items
 			{
 				name = string.Empty,
 				count = 1,
-				stuck = 1,
+				stack = 1,
 				icon = null,
 				type = ItemType.Empty
 			};

@@ -14,10 +14,8 @@ namespace Assets.Script.Controllers.Inventory
 
 		public void OnRemove()
 		{
-			inventory.RemoveItem(collectable.item);
-			Debug.Log(enable);
-			Destroy(menu);
-			enable = false;
+			inventory.RemoveItem(collectable);
+			Close();
 		}
 
 		public void OnEquip()
@@ -35,6 +33,10 @@ namespace Assets.Script.Controllers.Inventory
 
 			menu = Instantiate(contextMenu);
 			menu.transform.SetParent(transform, false);
+
+			var context = menu.transform.GetChild(0).GetComponent<ContextMenuClose>();
+			context.menu = this;
+
 			RectTransform rect = menu.GetComponent<RectTransform>();
 			RectTransform rectPrefab = contextMenu.GetComponent<RectTransform>();
 
@@ -50,6 +52,12 @@ namespace Assets.Script.Controllers.Inventory
 			removeButton.onClick.AddListener(OnRemove);
 
 			enable = true;
+		}
+
+		public void Close()
+		{
+			Destroy(menu);
+			enable = false;
 		}
 	}
 }

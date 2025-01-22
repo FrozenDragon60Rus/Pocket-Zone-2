@@ -20,26 +20,29 @@ namespace Assets.Script
 		void Start()
 		{
 			canvas.SetActive(false); // Скрыть инвентарь при старте
-			UpdateInventoryUI();
 		}
 
 		public void OnClick()
 		{
+			if(!canvas.activeSelf)
+				UpdateInventoryUI();
 			canvas.SetActive(!canvas.activeSelf);
 		}
 
 		// Добавление предмета в инвентарь
-		public void AddItem(Item item)
+		public bool AddItem(CollectableItem collectable)
 		{
 			if(items.Count < slotCount)
 			{
-				items.Add(item);
+				items.Add(collectable.item);
 				UpdateInventoryUI();
+				return true;
 			}
+			return false;
 		}
-		public void RemoveItem(Item item)
+		public void RemoveItem(CollectableItem collectable)
 		{
-			items.Remove(item);
+			items.Remove(collectable.item);
 			UpdateInventoryUI();	
 		}
 		public Item GetItem(int index) =>
@@ -56,14 +59,13 @@ namespace Assets.Script
 			EquipmentSlot slot = collectable.Slot;
 			equipment[slot] = null;
 		}
-
 		// Обновление UI инвентаря
 		void UpdateInventoryUI()
 		{
 			foreach (Transform slot in inventoryPanel.transform)
 			{
 				slot.GetChild(0).GetComponent<Image>().sprite = null;
-				slot.GetChild(0).GetComponent<CollectableItem>().item = Item.Empty;
+				slot.GetChild(0).GetComponent<CollectableItem>().SetItem(Item.Empty);
 			}
 
 			int i = 0;
@@ -71,7 +73,7 @@ namespace Assets.Script
 			{
 				Transform slot = inventoryPanel.transform.GetChild(i++);
 				slot.GetChild(0).GetComponent<Image>().sprite = item.icon;
-				slot.GetChild(0).GetComponent<CollectableItem>().item = item;
+				slot.GetChild(0).GetComponent<CollectableItem>().SetItem(item);
 			}
 		}
 	}
