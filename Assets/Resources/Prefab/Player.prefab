@@ -1,111 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1776840002744642453
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1776840002744642452}
-  - component: {fileID: 1776840002744642451}
-  - component: {fileID: 1776840002744642450}
-  m_Layer: 0
-  m_Name: SovietBag
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1776840002744642452
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776840002744642453}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1776840004157134103}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1776840002744642451
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776840002744642453}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 93bce68c22ba2ed4592b0338ae2ac8fd, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.5, y: 0.5}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!114 &1776840002744642450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776840002744642453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94c81de93ba68cc41a9b2baa453da191, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item:
-    name: 
-    count: 1
-    stuck: 1
-    icon: {fileID: 0}
-    type: 0
-  stats: {fileID: 0}
-  slot: 0
-  Stats: {fileID: 0}
 --- !u!1 &1776840002818737681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,10 +1081,6 @@ PrefabInstance:
       propertyPath: icon
       value: 
       objectReference: {fileID: 21300000, guid: 6532bc2c52f179142a7333cc0f5faeda, type: 3}
-    - target: {fileID: -4633809998006037716, guid: 8557230a3236b934db562b1973f4b458, type: 3}
-      propertyPath: stats
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6616529843578619085, guid: 8557230a3236b934db562b1973f4b458, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1365,6 +1255,72 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4205464355355443635, guid: aae3485e45fdcaf4aa6334a1681d244a, type: 3}
   m_PrefabInstance: {fileID: 2082795843476661321}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3177182734674061591
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1776840004157134103}
+    m_Modifications:
+    - target: {fileID: 1855051052559171353, guid: 79ffbe98faae4ed4ea64a197aa17bc99, type: 3}
+      propertyPath: item.icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 93bce68c22ba2ed4592b0338ae2ac8fd, type: 3}
+    - target: {fileID: 3800761337614434946, guid: 79ffbe98faae4ed4ea64a197aa17bc99, type: 3}
+      propertyPath: m_Name
+      value: SovietBag
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800761337614434947, guid: 79ffbe98faae4ed4ea64a197aa17bc99, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800761337614434947, guid: 79ffbe98faae4ed4ea64a197aa17bc99, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800761337614434947, guid: 79ffbe98faae4ed4ea64a197aa17bc99, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800761337614434947, guid: 79ffbe98faae4ed4ea64a197aa17bc99, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800761337614434947, guid: 79ffbe98faae4ed4ea64a197aa17bc99, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800761337614434947, guid: 79ffbe98faae4ed4ea64a197aa17bc99, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800761337614434947, guid: 79ffbe98faae4ed4ea64a197aa17bc99, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800761337614434947, guid: 79ffbe98faae4ed4ea64a197aa17bc99, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800761337614434947, guid: 79ffbe98faae4ed4ea64a197aa17bc99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800761337614434947, guid: 79ffbe98faae4ed4ea64a197aa17bc99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800761337614434947, guid: 79ffbe98faae4ed4ea64a197aa17bc99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 79ffbe98faae4ed4ea64a197aa17bc99, type: 3}
+--- !u!4 &1776840002744642452 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3800761337614434947, guid: 79ffbe98faae4ed4ea64a197aa17bc99, type: 3}
+  m_PrefabInstance: {fileID: 3177182734674061591}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3264660246094419185
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1427,30 +1383,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4412538580602724959, guid: ee2015416e2cbd9428f23246f314bc2a, type: 3}
   m_PrefabInstance: {fileID: 3264660246094419185}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1721464290977466197 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4228239672858858404, guid: ee2015416e2cbd9428f23246f314bc2a, type: 3}
-  m_PrefabInstance: {fileID: 3264660246094419185}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3264660246094419182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1721464290977466197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab77157e19fd424d8317dcbbaed7599, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item:
-    name: "\u0428\u043B\u0435\u043C"
-    count: 1
-    stuck: 1
-    icon: {fileID: 0}
-    type: 0
-  stats: {fileID: 0}
 --- !u!1001 &3387403302808634177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1732,7 +1664,8 @@ MonoBehaviour:
   item:
     name: 
     count: 1
-    stuck: 1
+    stack: 1
     icon: {fileID: 21300000, guid: d811afb0d42fed140806f31df436fbda, type: 3}
     type: 0
   stats: {fileID: 0}
+  textField: {fileID: 0}

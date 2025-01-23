@@ -12,7 +12,15 @@ namespace Assets.Script
 		public GameObject canvas; // Панель инвентаря
 		public GameObject inventoryPanel; // Панель слотов инвентаря
 		public GameObject equipmentPanel; // Панель слотов снаряжения
-		public Dictionary<EquipmentSlot, CollectableItem> equipment = new();
+		public Dictionary<EquipmentSlot, CollectableItem> equipment = new()
+		{
+			{ EquipmentSlot.Weapon, null },
+			{ EquipmentSlot.Head, null },
+			{ EquipmentSlot.Body, null },
+			{ EquipmentSlot.Hand, null },
+			{ EquipmentSlot.Leg, null },
+			{ EquipmentSlot.Bag, null }
+		};
 
 		private readonly List<Item> items = new(); // Список предметов в инвентаре
 		public int slotCount => 2;

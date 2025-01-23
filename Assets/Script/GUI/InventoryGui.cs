@@ -10,15 +10,6 @@ namespace Assets.Script.GUI
 	[CustomEditor(typeof(Inventory))]
 	public class InventoryGui : Editor
 	{
-		public Dictionary<EquipmentSlot, CollectableItem> collectable = new()
-		{
-			{ EquipmentSlot.Weapon, null },
-			{ EquipmentSlot.Head, null },
-			{ EquipmentSlot.Body, null },
-			{ EquipmentSlot.Hand, null },
-			{ EquipmentSlot.Leg, null },
-			{ EquipmentSlot.Bag, null }
-		};
 		bool show = true;
 
 		public override void OnInspectorGUI()
@@ -40,19 +31,19 @@ namespace Assets.Script.GUI
 				foreach (var slot in Enum.GetValues(typeof(EquipmentSlot)))
 				{
 					slotType = (EquipmentSlot)slot;
-					collectable[slotType] = (CollectableItem)EditorGUILayout.ObjectField(
-						slot.ToString(),
-						collectable[slotType],
+
+					inventory.equipment[slotType] = (CollectableItem)EditorGUILayout.ObjectField(
+						slotType.ToString(),
+						inventory.equipment[slotType],
 						typeof(CollectableItem),
 						true
 					);
 
-					if (collectable[slotType] == null)
+					if (inventory.equipment[slotType] == null)
 						continue;
-					if (collectable[slotType].Slot != slotType)
-						collectable[slotType] = null;
 
-					inventory.equipment[slotType] = collectable[slotType];
+					if (inventory.equipment[slotType].Slot != slotType)
+						inventory.equipment[slotType] = null;
 				}
 				EditorGUI.indentLevel--;
 			}
