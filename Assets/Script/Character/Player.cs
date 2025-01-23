@@ -14,9 +14,9 @@ namespace Assets.Script.Character
 			get
 			{
 				int defence = 0;
-				foreach (var key in inventory.equipment.Keys)
+				foreach (var equip in inventory.equipmentControl.equipment)
 				{
-					var item = inventory.equipment[key];
+					var item = equip.collectable;
 					if (item.stats.GetType() == typeof(AmunitionStats))
 					{
 						defence += (item.stats as AmunitionStats).defense;

@@ -17,6 +17,8 @@ namespace Assets.Script.GUI
 				collectable.Slot = (EquipmentSlot)EditorGUILayout.EnumFlagsField("Слот", collectable.Slot);
 			if (type == ItemType.Ammo)
 				collectable.AmmoType = (AmmoType)EditorGUILayout.EnumFlagsField("Калибр", collectable.AmmoType);
+
+			serializedObject.ApplyModifiedProperties();
 		}
 	}
 }

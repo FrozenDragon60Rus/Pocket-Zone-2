@@ -2,6 +2,7 @@
 using Assets.Script.Session;
 using System.Collections;
 using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Assets.Script.Controllers
@@ -32,8 +33,7 @@ namespace Assets.Script.Controllers
 				EquipmentData equipment = data.equipment;
 				for(int i = 0; i < data.equipment.slots.Count; i++)
 				{
-					equipment.collectable[i].item = equipment.item[i];
-					inventory.equipment[equipment.slots[i]] = equipment.collectable[i];
+					inventory.equipmentControl.SetEqupment(equipment.collectable[i]);
 				}
 			}
 
@@ -50,11 +50,10 @@ namespace Assets.Script.Controllers
 			{ 
 				data.inventory.item.Add(inventory.GetItem(i));
 			}
-			foreach (var keyValue in inventory.equipment)
+			foreach (var equip in inventory.equipmentControl.equipment)
 			{
-				data.equipment.slots.Add(keyValue.Key);
-				data.equipment.collectable.Add(keyValue.Value);
-				data.equipment.item.Add(keyValue.Value.item);
+				data.equipment.slots.Add(equip.slot);
+				data.equipment.collectable.Add(equip.collectable);
 			}
 
 			manager.Save(data);

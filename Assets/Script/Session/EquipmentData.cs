@@ -6,6 +6,5 @@ namespace Assets.Script.Session
 	{
 		public List<EquipmentSlot> slots = new();
 		public List<CollectableItem> collectable = new();
-		public List<Items.Item> item = new();
 	}
 }
