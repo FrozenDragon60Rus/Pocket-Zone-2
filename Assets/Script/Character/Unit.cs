@@ -12,7 +12,8 @@ namespace Assets.Script.Character
 		RectTransform hpBarRect;
 
 		protected virtual float Defence { get => stats.defence; }
-		protected Vector2 Health => new(stats.health, 0);
+		protected Vector2 Health => new(HPBarX, 0);
+		protected float HPBarX => (stats.maxHealth / 100) * stats.health;
 
 		private float BlockDamage(float damage)
 		{
