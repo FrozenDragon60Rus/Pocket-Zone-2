@@ -177,6 +177,8 @@ MonoBehaviour:
   - {fileID: 4460522453533080054, guid: 90e954cdee848a5479e9c9f131071d89, type: 3}
   - {fileID: 2628651167997895518, guid: 015ff16b2b63aa546a1179861d8413e8, type: 3}
   zone: 0
+  x: 1
+  y: 2
 --- !u!1 &360685933
 GameObject:
   m_ObjectHideFlags: 0
@@ -137276,6 +137278,8 @@ MonoBehaviour:
   enemyPool:
   - {fileID: 2628651167997895518, guid: 015ff16b2b63aa546a1179861d8413e8, type: 3}
   zone: 1
+  x: 2
+  y: 2
 --- !u!1 &903137482
 GameObject:
   m_ObjectHideFlags: 0
@@ -138065,6 +138069,8 @@ MonoBehaviour:
   enemyPool:
   - {fileID: 4460522453533080054, guid: 90e954cdee848a5479e9c9f131071d89, type: 3}
   zone: 1
+  x: 4
+  y: 2
 --- !u!1 &2113349801 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8766094390535930089, guid: c8270c6a43a07144aa09360d4be87d73, type: 3}
