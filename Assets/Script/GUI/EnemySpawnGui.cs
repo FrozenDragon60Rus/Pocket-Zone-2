@@ -15,11 +15,11 @@ namespace Assets.Script.GUI
 			DrawDefaultInspector();
 
 			if (zone == SpawnFigure.Circle)
-				spawn.X = EditorGUILayout.FloatField("Радиус", spawn.X);
+				spawn.x = EditorGUILayout.FloatField("Радиус", spawn.x);
 			if (zone == SpawnFigure.Rectangle)
 			{
-				spawn.X = EditorGUILayout.FloatField("Ширина", spawn.X);
-				spawn.Y = EditorGUILayout.FloatField("Высота", spawn.Y);
+				spawn.x = EditorGUILayout.FloatField("Ширина", spawn.x);
+				spawn.y = EditorGUILayout.FloatField("Высота", spawn.y);
 			}
 		}
 	}

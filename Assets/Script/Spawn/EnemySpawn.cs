@@ -19,8 +19,8 @@ namespace Assets.Script.Spawn
 		private GameObject enemy;
 		public SpawnFigure zone;
 
-		public float X { get; set; }
-		public float Y { get; set; }
+		[HideInInspector] public float x;
+		[HideInInspector] public float y;
 
 		private void OnDrawGizmos()
 		{
@@ -30,10 +30,10 @@ namespace Assets.Script.Spawn
 			switch (zone)
 			{
 				case SpawnFigure.Circle:
-					Gizmos.DrawWireSphere(transform.position, X);
+					Gizmos.DrawWireSphere(transform.position, x);
 					break;
 				case SpawnFigure.Rectangle:
-					Gizmos.DrawWireCube(transform.position, new Vector3(X, Y, 0));
+					Gizmos.DrawWireCube(transform.position, new Vector3(x, y, 0));
 					break;
 				default: 
 					break;
@@ -47,13 +47,13 @@ namespace Assets.Script.Spawn
 
 		// Случайная позиция внутри зоны спавна по радиусу
 		private Vector2 GetSpawnLocationFromRadius() =>
-			Random.insideUnitCircle * X;
+			Random.insideUnitCircle * x;
 
 		// Случайная позиция внутри зоны спавна в прямоугольнике
 		private Vector2 GetSpawnLocationFromRect()
-		{
-			float x = Random.value * X;
-			float y = Random.value * Y;
+		{	
+			float x = Random.value * this.x;
+			float y = Random.value * this.y;
 			return new Vector2(x, y);
 		}
 
