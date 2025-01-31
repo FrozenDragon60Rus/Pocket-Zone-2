@@ -1,5 +1,6 @@
 ﻿using Assets.Script.Stats;
 using JetBrains.Annotations;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Script.Controllers
@@ -8,6 +9,7 @@ namespace Assets.Script.Controllers
 	{
 		public Rigidbody2D rig;
 		public WeaponStats stats { get; set; }
+		private readonly string[] allowedTags = { "Player", "Ally", "Enemy" };
 
 		private Vector2 startPosition;
 
@@ -28,11 +30,7 @@ namespace Assets.Script.Controllers
 		{
 			GameObject target = collision.gameObject;
 
-			Debug.Log(target.tag);
-
-			if (target.CompareTag("Player") ||
-				target.CompareTag("Ally") ||
-				target.CompareTag("Enemy"))
+			if (allowedTags.Contains(target.tag))
 			{
 				var unit = collision.transform.GetComponent<Character.Unit>();
 				unit.Damage(stats.damage);
